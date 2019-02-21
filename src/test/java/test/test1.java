@@ -1,11 +1,9 @@
 package test;
 
 import com.alibaba.fastjson.JSON;
-import com.maoyan.ssm.model.User;
+import com.maoyan.ssm.model.ConfigTest;
 import com.maoyan.ssm.model.UserTest;
 import com.maoyan.ssm.service.UserService;
-import org.junit.Before;
-import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,29 +11,23 @@ import java.util.List;
 
 /**
  * @Auther: maoyan
- * @Date: 2018/8/10 16:27
+ * @Date: 2019/2/1 16:58
  * @Description:
  */
-public class JunitTest {
+public class test1 {
 
-    private UserService userService;
-
-    @Before
-    public void before(){
+    public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-mybatis.xml");
-        userService = applicationContext.getBean(UserService.class);
-    }
 
-    @Test
-    public void test(){
+        UserService userService = applicationContext.getBean(UserService.class);
 
-//        User user = userService.getUserById(1);
-//        System.out.println(JSON.toJSONString(user));
-
-
+//        DataSourceContextHolder.setDataSource(DataSources.MASTER);
         List<UserTest> userTest = userService.getAllUser();
         System.out.println(JSON.toJSONString(userTest));
-        System.out.println(userTest.get(0).getUserName());
+//        System.out.println(userTest.get(0).getUserName());
 
+//        DataSourceContextHolder.setDataSource(DataSources.SLAVE);
+        List<ConfigTest> configTests = userService.getAll();
+        System.out.println(JSON.toJSONString(configTests));
     }
 }

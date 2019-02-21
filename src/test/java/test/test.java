@@ -25,7 +25,8 @@ public class test {
    @Test
     public void testSpringAndMybatis(){
 
-        User user = userService.getUserById(1);
+        User user = userService.getUserById(2);
+       System.out.println(user.toString());
 
         System.out.println(JSON.toJSONString(user));
         

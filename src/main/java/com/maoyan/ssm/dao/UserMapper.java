@@ -1,12 +1,15 @@
 package com.maoyan.ssm.dao;
 
 import com.maoyan.ssm.model.User;
+import com.maoyan.ssm.model.UserTest;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 public interface UserMapper {
     /**
@@ -16,8 +19,8 @@ public interface UserMapper {
      * @mbg.generated Thu Aug 16 17:06:57 CST 2018
      */
     @Delete({
-        "delete from user_t",
-        "where id = #{id,jdbcType=INTEGER}"
+            "delete from user_t",
+            "where id = #{id,jdbcType=INTEGER}"
     })
     int deleteByPrimaryKey(Integer id);
 
@@ -53,7 +56,7 @@ public interface UserMapper {
     @Select({
         "select",
         "id, user_name, password, age",
-        "from user_t",
+        "from user",
         "where id = #{id,jdbcType=INTEGER}"
     })
     @ResultMap("com.maoyan.ssm.dao.UserMapper.BaseResultMap")
@@ -81,4 +84,5 @@ public interface UserMapper {
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(User record);
+
 }
