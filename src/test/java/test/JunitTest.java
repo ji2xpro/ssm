@@ -1,7 +1,6 @@
 package test;
 
 import com.alibaba.fastjson.JSON;
-import com.maoyan.ssm.model.User;
 import com.maoyan.ssm.model.UserTest;
 import com.maoyan.ssm.service.UserService;
 import org.junit.Before;
