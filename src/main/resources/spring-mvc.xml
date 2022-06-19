@@ -14,7 +14,7 @@
     <!--&lt;!&ndash;访问静态资源（假如没找到相应的控制器就去找静态资源，如果都没有则返回404）&ndash;&gt;-->
     <!--<mvc:default-servlet-handler/>-->
     <!-- 自动扫描该包，SpringMVC将包下用了@controller注解的类是注册为控制器 -->
-    <context:component-scan base-package="com.maoyan.ssm.controller"/>
+    <context:component-scan base-package="com.xxx.yyy.ssm.controller"/>
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">

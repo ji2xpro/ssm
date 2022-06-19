@@ -1,12 +1,12 @@
-package com.maoyan.ssm.dao.aop;
+package com.xxx.yyy.ssm.dao.aop;
 
-import com.maoyan.ssm.dao.DataSources;
+import com.xxx.yyy.ssm.dao.DataSources;
 
 /**
  * 多数据源操作
- * @Auther: maoyan
- * @Date: 2019/2/2 11:48
- * @Description:
+ * @auther: maoyan
+ * @date: 2019/2/2 11:48
+ * @description:
  */
 public class DataSourceContextHolder {
     //线程本地环境,通过TheadLocal来保存每个线程选择哪个数据源的标志(key)

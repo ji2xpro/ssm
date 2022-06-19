@@ -1,8 +1,8 @@
 package test;
 
 import com.alibaba.fastjson.JSON;
-import com.maoyan.ssm.model.UserTest;
-import com.maoyan.ssm.service.UserService;
+import com.xxx.yyy.ssm.model.UserMaster;
+import com.xxx.yyy.ssm.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -11,9 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.List;
 
 /**
- * @Auther: maoyan
- * @Date: 2018/8/10 16:27
- * @Description:
+ * @auther: maoyan
+ * @date: 2018/8/10 16:27
+ * @description:
  */
 public class JunitTest {
 
@@ -27,14 +27,11 @@ public class JunitTest {
 
     @Test
     public void test(){
+        UserMaster userMaster = userService.getUserById(1);
+        System.out.println(JSON.toJSONString(userMaster));
 
-//        User user = userService.getUserById(1);
-//        System.out.println(JSON.toJSONString(user));
-
-
-        List<UserTest> userTest = userService.getAllUser();
-        System.out.println(JSON.toJSONString(userTest));
-        System.out.println(userTest.get(0).getUserName());
-
+        List<UserMaster> userMasters = userService.getAllUserMaster();
+        System.out.println(JSON.toJSONString(userMasters));
+        System.out.println(userMasters.get(0).getUserName());
     }
 }

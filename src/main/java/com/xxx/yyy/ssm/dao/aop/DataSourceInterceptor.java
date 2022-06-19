@@ -1,6 +1,6 @@
-package com.maoyan.ssm.dao.aop;
+package com.xxx.yyy.ssm.dao.aop;
 
-import com.maoyan.ssm.dao.DataSources;
+import com.xxx.yyy.ssm.dao.DataSources;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,9 +15,9 @@ import java.lang.reflect.Method;
 /**
  * 使用AOP拦截特定的注解去动态的切换数据源
  * 通过增加一个切面去拦截servcie层在调用mybatis生成的接口时，来切换数据源，从而省去每次调用mybatis生成的接口时都要手动注明数据源
- * @Auther: maoyan
- * @Date: 2019/2/2 16:28
- * @Description:
+ * @auther: maoyan
+ * @date: 2019/2/2 16:28
+ * @description:
  */
 @Aspect
 @Component
@@ -25,7 +25,7 @@ import java.lang.reflect.Method;
 public class DataSourceInterceptor {
     //@within在类上设置
     //@annotation在方法上进行设置
-    @Pointcut("@within(com.maoyan.ssm.dao.aop.DynamicSwitchDataSource)||@annotation(com.maoyan.ssm.dao.aop.DynamicSwitchDataSource)")
+    @Pointcut("@within(com.xxx.yyy.ssm.dao.aop.DynamicSwitchDataSource)||@annotation(com.xxx.yyy.ssm.dao.aop.DynamicSwitchDataSource)")
     public void pointcut() {}
 
     @Before("pointcut()")

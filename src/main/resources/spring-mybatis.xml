@@ -13,7 +13,7 @@
                         http://www.springframework.org/schema/aop
                         http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 自动扫描ssm包下所有使用注解的类型 -->
-    <context:component-scan base-package="com.maoyan.ssm"/>
+    <context:component-scan base-package="com.xxx.yyy.ssm"/>
     <!-- 1、加载数据库配置文件 -->
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -56,12 +56,12 @@
     </bean>
 
     <!--动态数据源的配置-->
-    <bean id="dataSource" class="com.maoyan.ssm.dao.aop.DynamicDataSource">
+    <bean id="dataSource" class="com.xxx.yyy.ssm.dao.aop.DynamicDataSource">
         <!-- 默认使用的数据源 -->
         <property name="defaultTargetDataSource" ref="dataSource1" />
         <!-- 设置目标数据源 -->
         <property name="targetDataSources">
-            <map key-type="com.maoyan.ssm.dao.DataSources">
+            <map key-type="com.xxx.yyy.ssm.dao.DataSources">
                 <entry key="MASTER" value-ref="dataSource1" />
                 <entry key="SLAVE" value-ref="dataSource2" />
                 <!-- 这里还可以加多个dataSource -->
@@ -83,7 +83,7 @@
         <!-- 注入sqlSessionFactory，如果当前上文中只定义了一个则该属性可省去 -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
         <!-- 给出需要扫描Dao接口包 -->
-        <property name="basePackage" value="com.maoyan.ssm.dao"/>
+        <property name="basePackage" value="com.xxx.yyy.ssm.dao"/>
     </bean>
 
     <!-- 5、配置事务管理器 -->

@@ -1,17 +1,15 @@
-package com.maoyan.ssm.controller;
+package com.xxx.yyy.ssm.controller;
 
-import com.maoyan.ssm.model.User;
-import com.maoyan.ssm.service.UserService;
+import com.xxx.yyy.ssm.model.UserMaster;
+import com.xxx.yyy.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 /**
- * @Auther: maoyan
- * @Date: 2018/8/11 00:00
- * @Description:
+ * @author: maoyan
+ * @date: 2018/8/11 00:00
+ * @description:
  */
 
 //@Controller
@@ -30,16 +28,16 @@ public class UserController {
 //    }
 
     @RequestMapping(value = "/showUser",method = RequestMethod.GET)
-    public User test(@RequestParam(value = "ID") int ID, Model model){
-        User user = this.userService.getUserById(ID);
+    public UserMaster test(@RequestParam(value = "ID") int ID, Model model){
+        UserMaster user = this.userService.getUserById(ID);
         model.addAttribute("user", user);
         return user;
     }
 
 
     @RequestMapping(value = "/showUser/{ID}",method = RequestMethod.GET)
-    public User toIndex(@PathVariable(value = "ID") int ID,Model model){
-        User user = this.userService.getUserById(ID);
+    public UserMaster toIndex(@PathVariable(value = "ID") int ID,Model model){
+        UserMaster user = this.userService.getUserById(ID);
         model.addAttribute("user", user);
         return user;
     }

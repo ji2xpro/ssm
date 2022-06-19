@@ -1,33 +1,33 @@
 package test;
 
 import com.alibaba.fastjson.JSON;
-import com.maoyan.ssm.model.ConfigTest;
-import com.maoyan.ssm.model.UserTest;
-import com.maoyan.ssm.service.UserService;
+import com.xxx.yyy.ssm.model.UserMaster;
+import com.xxx.yyy.ssm.model.UserSlave;
+import com.xxx.yyy.ssm.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
 /**
- * @Auther: maoyan
- * @Date: 2019/2/1 16:58
- * @Description:
+ * @auther: maoyan
+ * @date: 2019/2/1 16:58
+ * @description:
  */
-public class test1 {
-
+public class Test3 {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-mybatis.xml");
-
         UserService userService = applicationContext.getBean(UserService.class);
 
 //        DataSourceContextHolder.setDataSource(DataSources.MASTER);
-        List<UserTest> userTest = userService.getAllUser();
-        System.out.println(JSON.toJSONString(userTest));
-//        System.out.println(userTest.get(0).getUserName());
+        List<UserMaster> userMasters = userService.getAllUserMaster();
+        System.out.println(JSON.toJSONString(userMasters));
+        System.out.println(userMasters.get(0).getUserName());
+
 
 //        DataSourceContextHolder.setDataSource(DataSources.SLAVE);
-        List<ConfigTest> configTests = userService.getAll();
-        System.out.println(JSON.toJSONString(configTests));
+        List<UserSlave> userSlaves = userService.getAllUserSlave();
+        System.out.println(JSON.toJSONString(userSlaves));
+        System.out.println(userSlaves.get(0).getUserName());
     }
 }
