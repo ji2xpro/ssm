@@ -14,7 +14,6 @@ import java.util.List;
 public interface UserService {
     User getUserById(int userId);
 
-
     List<UserTest> getAllUser();
 
     List<ConfigTest> getAll();
